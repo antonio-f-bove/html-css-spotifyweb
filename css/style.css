@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
 }
 
 .row {
@@ -9,12 +12,20 @@
     display: flex;
 }
 
+.grey-text {
+    color: #555;
+}
+
+.white-text {
+    color: #fff;
+}
+
 /* ========================================== */
 
 
 /* general dimensions */
 
-.container-flex {
+.container {
     height: 100vh;
     width: 100%;
 }
@@ -24,13 +35,14 @@
 }
 
 .main-row .sidebar {
-    background-color: aqua;
+    background-color: ##191414;
     width: 160px;
     height: 100%;
 }
 
 .main-row .main {
-    background-color: burlywood;
+    background-color: #191414;
+    opacity: .99;
     width: calc(100% - 160px);
     height: 100%;
 }
@@ -64,15 +76,34 @@
 }
 
 .screen .menu {
+    list-style: none;
+
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
+}
+.screen .menu li {
+    padding: 5px 10px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+
+    position: relative;
+}
+.screen .menu li:hover::before {    /* green select bar */
+    content: "";
+    width: 30%;
+    border-top: 2px solid #1DB954;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
+
 .screen .album {
-    height: 300px;
-    background-color: orangered;
-    border: 1px solid black;
+   
 }
 
 /* nav-bar */
@@ -111,19 +142,6 @@
         width: calc(100% - 60px);
     }
 
-    /* nav-bar */
-    /* .nav-bar-left, .nav-bar-right {
-        background-color: red;
-        border: 2px solid red;
-        height: 100%;
-        width: 60px;
-    }
-
-    .nav-bar-center {
-        background-color: red;
-        border: 1px solid #000;
-        height: 100%;
-        width: calc(100% - 60px * 2);
-    } */
+    
 
 }
