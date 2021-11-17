@@ -4,19 +4,20 @@
     box-sizing: border-box;
 }
 
-/* ========================================== */
-
-.container-flex {
-    height: 100vh;
-    width: 100%;
-}
-
 .row {
     width: 100%;
     display: flex;
 }
 
+/* ========================================== */
+
+
 /* general dimensions */
+
+.container-flex {
+    height: 100vh;
+    width: 100%;
+}
 
 .main-row {
     height: calc(100vh - 80px);
@@ -41,7 +42,7 @@
     width: 100%;
 
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
 }
 
 
@@ -52,6 +53,26 @@
     height: 80px;
     background-color: #000;
     opacity: 80%;
+    /* non sembra esserci bisogno di z-index */
+}
+
+.main .screen {
+    width: 100%;
+    height: calc(100% - 80px);
+
+    overflow: auto;
+}
+
+.screen .menu {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.screen .album {
+    height: 300px;
+    background-color: orangered;
+    border: 1px solid black;
 }
 
 /* nav-bar */
