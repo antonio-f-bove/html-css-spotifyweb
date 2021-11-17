@@ -20,6 +20,15 @@
     color: #fff;
 }
 
+.fl-r {
+    float: right;
+}
+.clrfx {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /* ========================================== */
 
 
@@ -35,14 +44,14 @@
 }
 
 .main-row .sidebar {
-    background-color: ##191414;
+    background-color: #191414;
     width: 160px;
     height: 100%;
 }
 
 .main-row .main {
     background-color: #191414;
-    opacity: .99;
+    opacity: .98;
     width: calc(100% - 160px);
     height: 100%;
 }
@@ -57,6 +66,17 @@
     align-items: center;
 }
 
+/* sidebar */
+
+.sidebar .logo-container {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar .logo-container img {
+    height: 50%;
+}
 
 /* main */
 
@@ -66,6 +86,15 @@
     background-color: #000;
     opacity: 80%;
     /* non sembra esserci bisogno di z-index */
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.banner .button {
+    font-weight: 600;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
 }
 
 .main .screen {
