@@ -57,7 +57,7 @@
 }
 
 
-.nav-bar {
+.player {
     background-color: darkgoldenrod;
     height: 80px;
     width: 100%;
@@ -104,7 +104,7 @@
     overflow: auto;
 }
 
-.screen .menu {
+.screen .navbar {
     list-style: none;
 
     justify-content: center;
@@ -112,7 +112,7 @@
     flex-wrap: wrap;
 
 }
-.screen .menu li {
+.screen .navbar li {
     padding: 5px 10px;
     font-weight: 700;
     text-align: center;
@@ -120,7 +120,7 @@
 
     position: relative;
 }
-.screen .menu li:hover::before {    /* green select bar */
+.screen .navbar li:hover::before {    /* green select bar */
     content: "";
     width: 30%;
     border-top: 2px solid #1DB954;
@@ -135,16 +135,16 @@
    
 }
 
-/* nav-bar */
+/* player */
 
-.nav-bar-left, .nav-bar-right {
+.player-left, .player-right {
     background-color: red;
     border: 2px solid red;
     height: 100%;
     width: 160px;
 }
 
-.nav-bar-center {
+.player-center {
     background-color: red;
     border: 1px solid #000;
     height: 100%;
