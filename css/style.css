@@ -7,7 +7,7 @@
     font-size: 12px;
 }
 
-.row {
+.flex {
     width: 100%;
     display: flex;
 }
@@ -20,14 +20,14 @@
     color: #fff;
 }
 
-.fl-r {
+/* .fl-r {
     float: right;
 }
 .clrfx {
     content: "";
     display: table;
     clear: both;
-}
+} */
 
 /* ========================================== */
 
@@ -148,9 +148,9 @@
     background-color: red;
     border: 1px solid #000;
     height: 100%;
-    width: calc(100% - 160px * 2);
-
-    min-width: 200px;
+    
+    flex-grow: 1;
+    min-width: calc(100% / 3);
 }
 
 
