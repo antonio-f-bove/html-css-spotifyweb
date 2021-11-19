@@ -87,20 +87,25 @@
     list-style: none;
 }
 .sidebar .menu-item {
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     cursor: pointer;
+
+    position: relative;
 }
+.sidebar .menu-item:hover::before {    /* green select bar */
+    content: "";
+    height: 100%;
+    border-left: 4px solid #1DB954;
+    position: absolute;
+    left: -19px;
+    transform: translate(-50%, 0);
+}
+
 .sidebar .menu-item i {
     font-size: 20px;
     padding-right: 5px;
     vertical-align: middle;
 }
-
-.sidebar .menu-container li:hover::before {    /* green select VERTICAL bar */
-    border-left: 2px solid #1DB954;
-    height: 100%;
-}
-
 
 .sidebar .playlist-container {
     flex-grow: 1;
