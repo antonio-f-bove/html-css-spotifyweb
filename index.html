@@ -19,38 +19,42 @@
         <div class="main-row flex">
 
             <div class="sidebar flex-col">
-                <div class="sidebar-upper-container">
 
+                <div class="upper-container">
                     <div class="logo-container">
-                        <img src="img/logo.svg" alt="logo">
+                        <img class="media_hide_mobile"src="img/logo.svg" alt="logo">
+                        <img class="media_show_mobile"src="img/logo-small.svg" alt="logo">
                     </div>
 
                     <div class="menu-container grey-text">
-                        <h4 class="menu-item home white-text">Home</h4>
-                        <h4 class="menu-item search">Cerca</h4>
-                        <h4 class="menu-item books">La tua libreria</h4>
-                    </div>
-
-                    <div class="playlist-container">
-                        <h3 class="white-text">PLAYLIST</h3>
-                        <div class="playlist-button-container grey-text">
-                            <div class="create-playlist-button">Crea Playlist</div>
-                        </div>
-
-                        <div class="playlist-box grey-text">
-                            <div class="playlist-item">Nome Playlist</div>
-                            <div class="playlist-item">Nome Playlist</div>
-                            <div class="playlist-item">Nome Playlist</div>
-                            <div class="playlist-item">Nome Playlist</div>
-                            <div class="playlist-item">Nome Playlist</div>
-                            <div class="playlist-item">Nome Playlist</div>
-                            <div class="playlist-item">Nome Playlist</div>
-                        </div>
+                        <div class="menu-item white-text"><i class="fas fa-home"></i><span class="media_hide_mobile">Home</span></div>
+                        <div class="menu-item"><i class="fas fa-search"></i><span class="media_hide_mobile">Cerca</span></div>
+                        <div class="menu-item"><i class="fas fa-bars"></i><span class="media_hide_mobile">La tua libreria</span></div>
                     </div>
                 </div>
-                <div class="sidebar-lower-container">
-                    <div class="installa-app-container grey-text">Installa App</div>
-                    <div class="user-info-container white-text">John Doe</div>
+
+                <div class="playlist-container media_hide_mobile">
+                    <div class="playlist-button-container grey-text">
+                        <h3 class="white-text">PLAYLIST</h3>
+                        <div class="create-playlist-button"><span class="button-plus">+</span><span class="button-text">Crea Playlist</span></div>
+                    </div>
+
+                    <div class="playlist-box grey-text">
+                        <ul>
+                            <li class="playlist-item">Nome Playlist</li>
+                            <li class="playlist-item">Nome Playlist</li>
+                            <li class="playlist-item">Nome Playlist</li>
+                            <li class="playlist-item">Nome Playlist</li>
+                            <li class="playlist-item">Nome Playlist</li>
+                            <li class="playlist-item">Nome Playlist</li>
+                            <li class="playlist-item">Nome Playlist</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="lower-container">
+                    <div class="installa-app grey-text"><i class="far fa-arrow-alt-circle-down"></i><span class="media_hide_mobile">Installa App</span></div>
+                    <div class="user-info white-text"><i class="far fa-user-circle"></i><span class="media_hide_mobile">John Doe</span></div>
                 </div>
             </div>
 
@@ -84,10 +88,22 @@
 
             <div class="player-left"></div>
 
-            <div class="player-center">
+            <div class="player-center white-text">
 
-                <div class="playback-buttons"></div>
-                <div class="playback-progress"></div>
+                <div class="playback-controls flex">
+                    <i class="fas fa-random"></i>
+                    <i class="fas fa-step-backward"></i>
+                    <i class="far fa-play-circle"></i>
+                    <i class="fas fa-step-forward"></i>
+                    <i class="fas fa-redo-alt"></i>
+                </div>
+                <div class="playback-progress flex">
+                    <div class="time-start">0:25</div>
+                    <div class="progress-bar bar">
+                        <div class="progress-bar progress"></div>
+                    </div>
+                    <div class="time-end">4:35</div>
+                </div>
 
             </div>
 

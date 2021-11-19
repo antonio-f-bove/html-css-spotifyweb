@@ -21,9 +21,11 @@
 .grey-text {
     color: #555;
 }
-
 .white-text {
     color: #fff;
+}
+.light-grey-text {
+    color: #aaa;
 }
 
 /* .fl-r {
@@ -55,7 +57,8 @@
     height: 100%;
 
     padding-left: 20px;
-    justify-content: space-between;
+
+    overflow: hidden;
 }
 
 .main-row .main {
@@ -67,7 +70,7 @@
 
 
 .player {
-    background-color: darkgoldenrod;
+    background-color: #333;
     height: 80px;
     width: 100%;
 
@@ -88,38 +91,87 @@
     height: 40%;
 }
 
-.sidebar .menu-container {}
 .sidebar .menu-item {
-    padding-bottom: 15px;
-    padding-left: 25px;
-    position: relative;
+    padding-bottom: 10px;
 }
-.sidebar .menu-item::before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+.sidebar .menu-item i {
     font-size: 20px;
-    position: absolute;
-    left: 0;
-    top: -5px;
+    padding-right: 5px;
+    vertical-align: middle;
 }
-.sidebar .home::before {
-    content: "\f015";
+
+.sidebar .playlist-container {
+    flex-grow: 1;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
 }
-.sidebar .search::before {
-    content: "\f002";
-}
-.sidebar .books::before {
-    content: "\f0c9";
-}
+
 
 .sidebar .playlist-button-container {
+    margin: 10px 0;
+}
+
+.playlist-container .create-playlist-button {
+    cursor: pointer;
+    margin-top: 10px;
+}
+.create-playlist-button .button-text {
     
 }
-
-.sidebar .playlist-box {
-    flex-grow: 1;
+.create-playlist-button .button-plus {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: lighter;
+    color: #191414;
+    background-color: #aaa;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
+
+.sidebar .playlist-box {
+    overflow-y: auto;
+    min-height: 150px;
+
+    flex-grow: 1;
+}
+.playlist-box ul {
+    list-style: none;
+}
+.sidebar .playlist-item {
+    padding: 7px 0;
+}
+
+.sidebar .lower-container {
+    margin-right: 20px;
+}
+
+.lower-container .user-info {
+    margin: 10px 0;
+    padding-top: 15px;
+    border-top: 2px solid #555;
+}
+.lower-container .user-info span {
+    font-size: 16px;
+    margin-left: 10px;
+}
+.lower-container .user-info i {
+    font-size: 20px;
+    font-weight: 300;
+    background-color: #555;
+    border-radius: 50%;
+}
+
+.lower-container .installa-app span {
+    margin-left: 10px;
+}
 
 
 /* main */
@@ -146,7 +198,7 @@
     width: 100%;
     height: calc(100% - 80px);
 
-    overflow: auto;
+    overflow-y: scroll;
 }
 
 .screen .navbar {
@@ -182,39 +234,98 @@
 /* player */
 
 .player-left, .player-right {
-    background-color: red;
     border: 2px solid red;
     height: 100%;
-    width: 160px;
+    width: 200px;
+    max-width: calc(100% / 3);
 }
 
 .player-center {
-    background-color: red;
-    border: 1px solid #000;
     height: 100%;
     
     flex-grow: 1;
     min-width: calc(100% / 3);
 }
 
+.player-center .playback-controls {
+    text-align: center;
+    padding: 20px 0;
+
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.playback-controls [class*="fa-"] {
+    transform: scale(1.5);
+    /* margin: 0 15px; */
+    cursor: pointer;
+}
+.playback-controls .fa-play-circle {
+    transform: scale(2.5);
+}
+
+.player-center .playback-progress {
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.playback-progress .progress-bar {
+    height: 5px;
+    border-radius: 5px;
+    background-color: #555;
+}
+.progress-bar.bar {
+    width: 60%;
+    min-width: ;
+}
+.progress-bar.progress {
+    width: 20%;
+    background-color: #aaa;
+}
+
+.playback-progress .time-start, 
+.playback-progress .time-end {
+    
+}
 
 
 
-
-
+.media_show_mobile {
+    display: none;
+}
 
 /* phone */
 @media screen and (max-width: 576px) {
     /* main row */
     .main-row .sidebar {
         width: 60px;
-        background-color: black;
+        padding: 0;
+        align-items: center;
+        justify-content: space-between;
     }
+    .sidebar > * {
+        padding: 0;
+        margin: 0;
+    }
+    .sidebar .menu-item {
+        padding-left: 5px;
+    }
+    .sidebar .playlist-container.media_hide_mobile {
+        display: none;
+    }
+
 
     .main-row .main {
         width: calc(100% - 60px);
     }
+   
 
-    
+    .media_hide_mobile {
+        display: none;
+    }
+    .media_show_mobile {
+        display: block;
+    }
 
 }
