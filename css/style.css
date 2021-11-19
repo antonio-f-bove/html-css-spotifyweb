@@ -87,7 +87,7 @@ li:hover::before {
     align-items: center;
 }
 
-/* sidebar */
+/* #region SIDEBAR */
 /* padding-left: 20px su tutta la sidebar -- cf. general dimensions */
 
 .sidebar .logo-container {
@@ -105,6 +105,7 @@ li:hover::before {
 }
 .sidebar .menu-item {
     padding-bottom: 10px;
+    cursor: pointer;
 }
 .sidebar .menu-item i {
     font-size: 20px;
@@ -185,9 +186,9 @@ li:hover::before {
 .lower-container .installa-app span {
     margin-left: 10px;
 }
+/* #endregion */
 
-
-/* main */
+/* #region MAIN - banner & navbar */
 
 .main .banner {
     width: 100%;
@@ -211,6 +212,7 @@ li:hover::before {
     width: 100%;
     height: calc(100% - 80px);
 
+    padding: 0 20px;
     overflow-y: scroll;
 }
 
@@ -233,13 +235,39 @@ li:hover::before {
     border-top: 2px solid #1DB954;
     width: 30%;
 }
+/* #endregion */
 
+/* #region ALBUMS */
 
-.screen .album {
+.screen .albums {
    
 }
 
-/* player */
+.album-row h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.album-row .album {
+    max-width: calc((100vw - 200px) / 7);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
+    margin: 0 5px;
+}
+.album .img-container {
+}
+.album-row .img-container img {
+    width: 100%;
+}
+.album-row ul {
+    list-style: none;
+    width: 100%;
+
+    justify-content: space-between;
+}
+.album-row h4, .album-row p {
+    text-align: center;
+}
+/* #endregion */
+
+/* #region PLAYER */
 
 .player-left, .player-right {
     border: 2px solid red;
@@ -292,16 +320,31 @@ li:hover::before {
     background-color: #aaa;
 }
 
-.playback-progress .time-start, 
-.playback-progress .time-end {
-    
-}
-
-
+/* #endregion */
 
 .media_show_mobile {
     display: none;
 }
+
+/* tablet */
+@media screen and (max-width: 992px) {
+    .album-row ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .album-row .album {
+        max-width: calc((100vw - 200px) / 4 - 20px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
+    }
+}
+
+
+/* intermediate */
+@media screen and (max-width: 768px) {
+    .album-row .album {
+        max-width: calc((100vw - 200px) / 2 - 30px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
+    }
+}
+
 
 /* phone */
 @media screen and (max-width: 576px) {
@@ -332,6 +375,10 @@ li:hover::before {
 
     .main-row .main {
         width: calc(100% - 60px);
+    }
+
+    .album-row .album {
+        max-width: calc((100vw - 60px) / 2 - 30px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
     }
    
 
