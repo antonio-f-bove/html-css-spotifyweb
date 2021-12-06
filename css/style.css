@@ -4,7 +4,7 @@
     box-sizing: border-box;
 
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
 }
 
@@ -21,18 +21,49 @@
 .grey-text {
     color: #555;
 }
+.grey-text-no-hover {
+    color: #555;
+}
 .white-text {
     color: #fff;
 }
-.light-grey-text {
-    color: #aaa;
+.greyer-text {
+    color: #999;
 }
 
+.grey-text:hover, .greyer-text:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.slider {
+    height: 5px;
+    border-radius: 5px;
+    background-color: #555;
+}
+/* .slider only needs specific width */
+.slider.active {
+    background-color: #aaa;
+    position: relative;
+}
+.slider:hover .slider.active::after {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+/* perche non compare ??? */
+.slider:hover .slider.active {
+    background-color: #1DB954;
+}
 
 /* ========================================== */
 
 
-/* general dimensions */
+/* #region GENREAL DIMENSIONS */
 
 .container {
     height: 100vh;
@@ -68,6 +99,8 @@
     justify-content: space-between;
     align-items: center;
 }
+
+/* #endregion */
 
 /* #region SIDEBAR */
 /* padding-left: 20px su tutta la sidebar -- cf. general dimensions */
@@ -193,6 +226,10 @@
     padding: 10px 20px;
     border-radius: 20px;
     margin-right: 10px;
+    text-decoration: none;
+}
+.banner .button:hover {
+    transform: scale(1.1);
 }
 
 .main .screen {
@@ -239,12 +276,12 @@
 }
 
 .album-row h2 {
-    font-size: 18px;
+    font-size: 26px;
     margin: 10px 0;
 }
 
 .album-row .album {
-    max-width: calc((100vw - 200px) / 7);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
+    max-width: calc(100% / 6 - 10px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
     margin: 10px 5px;
 }
 
@@ -283,18 +320,49 @@
 }
 .album h4, .album p {
     text-align: center;
-
+}
+.album h4 {
+    font-size: 20px;
 }
 /* #endregion */
 
 /* #region PLAYER */
 
 .player-left, .player-right {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 100%;
     width: 200px;
+    padding: 10px;
     max-width: calc(100% / 3);
 }
+
+.player-left {
+    align-items: center;
+}
+
+.player-left .img-container {
+    height: 70%;
+    margin-right: 10px;
+}
+.player-left .img-container img {
+    height: 100%;
+}
+
+.player-left .text-container {
+    margin-right: 25px;
+}
+.player-left .text-container p {
+    font-size: 10px;
+}
+
+.player-left .icons-container {
+    justify-content: flex-end;
+    column-gap: 10px;
+}
+.player-left .icons-container i {
+    font-size: 16px;
+}
+
 
 .player-center {
     height: 100%;
@@ -313,34 +381,49 @@
 
 .playback-controls [class*="fa-"] {
     transform: scale(1.5);
-    /* margin: 0 15px; */
     cursor: pointer;
 }
 .playback-controls .fa-play-circle {
     transform: scale(2.5);
 }
+.playback-controls .fa-play-circle:hover {
+    transform: scale(2.6);
+}
 
-.player-center .playback-progress {
+.player-center .playback-bar {
     justify-content: center;
     align-items: center;
     column-gap: 30px;
+    font-size: 10px;
 }
 
-.playback-progress .progress-bar {
-    height: 5px;
-    border-radius: 5px;
-    background-color: #555;
-}
-.progress-bar.bar {
+.playback-bar .slider {
     width: 60%;
-    min-width: ;
 }
-.progress-bar.progress {
+.playback-bar .slider.active {
     width: 20%;
-    background-color: #aaa;
+}
+
+.player-right {
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+}
+.player-right i {
+
+}
+
+.player-right .slider {
+    width: 50%;
+}
+
+.player-right .slider.active {
+    width: 70%;
 }
 
 /* #endregion */
+
+/* #region MEDIA QUERYS */
 
 .media_show_mobile {
     display: none;
@@ -353,7 +436,7 @@
         justify-content: flex-start;
     }
     .album-row .album {
-        max-width: calc((100vw - 200px) / 4 - 20px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
+        max-width: calc(100% / 4 - 20px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
     }
 }
 
@@ -361,7 +444,7 @@
 /* intermediate */
 @media screen and (max-width: 768px) {
     .album-row .album {
-        max-width: calc((100vw - 200px) / 2 - 30px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
+        max-width: calc(100% / 2 - 30px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
     }
 }
 
@@ -398,7 +481,7 @@
     }
 
     .album-row .album {
-        max-width: calc((100vw - 60px) / 2 - 30px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
+        max-width: calc(100% / 2 - 30px);    /* con flex come avrei fatto con le dimensioni dei quadrati ? */
     }
    
 
@@ -410,3 +493,5 @@
     }
 
 }
+
+/* #endregion */

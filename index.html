@@ -26,10 +26,10 @@
                         <img class="media_show_mobile"src="img/logo-small.svg" alt="logo">
                     </div>
 
-                    <ul class="menu-container grey-text">
-                        <li class="menu-item white-text"><i class="fas fa-home"></i><span class="media_hide_mobile">Home</span></li>
-                        <li class="menu-item"><i class="fas fa-search"></i><span class="media_hide_mobile">Cerca</span></li>
-                        <li class="menu-item"><i class="fas fa-bars"></i><span class="media_hide_mobile">La tua libreria</span></li>
+                    <ul class="menu-container">
+                        <li class="menu-item grey-text"><i class="fas fa-home"></i><span class="media_hide_mobile">Home</span></li>
+                        <li class="menu-item grey-text"><i class="fas fa-search"></i><span class="media_hide_mobile">Cerca</span></li>
+                        <li class="menu-item grey-text"><i class="fas fa-bars"></i><span class="media_hide_mobile">La tua libreria</span></li>
                     </ul>
                 </div>
 
@@ -39,15 +39,15 @@
                         <div class="create-playlist-button"><span class="button-plus">+</span><span class="button-text">Crea Playlist</span></div>
                     </div>
 
-                    <div class="playlist-box grey-text">
+                    <div class="playlist-box">
                         <ul>
-                            <li class="playlist-item">Nome Playlist</li>
-                            <li class="playlist-item">Nome Playlist</li>
-                            <li class="playlist-item">Nome Playlist</li>
-                            <li class="playlist-item">Nome Playlist</li>
-                            <li class="playlist-item">Nome Playlist</li>
-                            <li class="playlist-item">Nome Playlist</li>
-                            <li class="playlist-item">Nome Playlist</li>
+                            <li class="playlist-item grey-text">Nome Playlist</li>
+                            <li class="playlist-item grey-text">Nome Playlist</li>
+                            <li class="playlist-item grey-text">Nome Playlist</li>
+                            <li class="playlist-item grey-text">Nome Playlist</li>
+                            <li class="playlist-item grey-text">Nome Playlist</li>
+                            <li class="playlist-item grey-text">Nome Playlist</li>
+                            <li class="playlist-item grey-text">Nome Playlist</li>
                         </ul>
                     </div>
                 </div>
@@ -61,24 +61,23 @@
             <div class="main">
 
                 <div class="banner flex">
-                    <div class="button white-text">EFFETTUA L'UPGRADE</div>
+                    <a href="#" class="button white-text">EFFETTUA L'UPGRADE</a>
                 </div>
 
                 <div class="screen">
 
-                    <ul class="navbar flex grey-text">       <!-- conviene usare ul ? -->
-                        <li><div class="navbar-item">IN EVIDENZA</div>
-                        <li><div class="navbar-item">PODCAST</div>
-                        <li><div class="navbar-item">CLASSIFICHE</div>
-                        <li><div class="navbar-item">GENERI E MOOD</div>
-                        <li><div class="navbar-item">NUOVE USCITE</div>
-                        <li><div class="navbar-item">SCOPRI</div>
+                    <ul class="navbar flex">
+                        <li><div class="navbar-item grey-text">IN EVIDENZA</div>
+                        <li><div class="navbar-item grey-text">PODCAST</div>
+                        <li><div class="navbar-item grey-text">CLASSIFICHE</div>
+                        <li><div class="navbar-item grey-text">GENERI E MOOD</div>
+                        <li><div class="navbar-item grey-text">NUOVE USCITE</div>
+                        <li><div class="navbar-item grey-text">SCOPRI</div>
                     </ul>
 
                     <div class="albums">
                         <div class="album-row white-text"">
                             <h2>Recently played</h2>
-                            <p class="grey-text"></p>
                             <ul class="flex">
                                 <li class="album">
                                     <div class="img-container">
@@ -127,7 +126,7 @@
 
                         <div class="album-row white-text"">
                             <h2>Creato per John Doe</h2>
-                            <p class="grey-text">Più ascolti, più accurati saranno i suggerimenti</p>
+                            <p class="grey-text-no-hover">Più ascolti, più accurati saranno i suggerimenti</p>
                             <ul class="flex">
                                 <li class="album">
                                     <div class="img-container">
@@ -176,30 +175,58 @@
 
         <div class="player flex">
 
-            <div class="player-left"></div>
+            <div class="player-left flex greyer-text">
+
+                <div class="img-container">
+                    <img src="img/sinister.jpeg" alt="">
+                </div>
+
+                <div class="text-container">
+                    <h4 class="white-text">Sinister</h4>
+                    <p>Brano nome</p>
+                </div>
+
+                <div class="icons-container flex">
+                    <i class="far fa-heart"></i>
+                    <i class="far fa-folder"></i>
+                </div>
+
+            </div>
 
             <div class="player-center white-text">
 
                 <div class="playback-controls flex">
+                    <!-- perche i tasti si vedono attraverso il banner ???? -->
                     <i class="fas fa-random"></i>
                     <i class="fas fa-step-backward"></i>
                     <i class="far fa-play-circle"></i>
                     <i class="fas fa-step-forward"></i>
                     <i class="fas fa-redo-alt"></i>
                 </div>
-                <div class="playback-progress flex">
+                <div class="playback-bar flex">
                     <div class="time-start">0:25</div>
-                    <div class="progress-bar bar">
-                        <div class="progress-bar progress"></div>
+                    <div class="slider">
+                        <div class="slider active"></div>
                     </div>
                     <div class="time-end">4:35</div>
                 </div>
 
             </div>
 
-            <div class="player-right"></div>
+            <div class="player-right flex white-text">
+
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-desktop"></i>
+                <i class="fas fa-volume-up"></i>
+
+                <div class="slider">
+                    <div class="slider active"></div>
+                </div>
+
+            </div>
 
         </div>
+        
        
 
     </div>
